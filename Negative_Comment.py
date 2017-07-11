@@ -10,7 +10,7 @@ from textblob.sentiments import NaiveBayesAnalyzer
 
 #classifier for sentiment analysis.It uses the the data set of TextBlob library:
 
-from token import BASE_URL,APP_ACCESS_TOKEN
+from common import BASE_URL,APP_ACCESS_TOKEN
 
 from Get_Post_Id import get_post_id
 

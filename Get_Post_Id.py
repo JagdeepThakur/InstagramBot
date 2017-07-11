@@ -2,7 +2,7 @@ import requests
 
 from Get_User_Id import get_user_id
 
-from token import BASE_URL,APP_ACCESS_TOKEN
+from common import BASE_URL,APP_ACCESS_TOKEN
 
 import sys
 

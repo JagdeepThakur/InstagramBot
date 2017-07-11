@@ -1,8 +1,6 @@
 import requests
 
-from token import BASE_URL,APP_ACCESS_TOKEN
-
-
+from common import BASE_URL,APP_ACCESS_TOKEN
 
 from colorama import  *
 

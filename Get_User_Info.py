@@ -2,9 +2,12 @@ from Get_User_Id import get_user_id
 
 import requests
 
-from token import BASE_URL,APP_ACCESS_TOKEN
+from common import BASE_URL,APP_ACCESS_TOKEN
 
-from colorama import *
+from colorama import init,Fore,Style
+
+init()
+
 
 # Mehod FoR Getting information of a particular user
 
