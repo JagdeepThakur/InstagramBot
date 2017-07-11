@@ -22,6 +22,11 @@ from colorama import *
 
 init()
 
+import win32com.client as wincl
+
+speak = wincl.Dispatch("SAPI.SpVoice")
+
+
 show_menu = True
 
 # Main Function Starts From Here
