@@ -7,7 +7,11 @@ import urllib
 #FOR DOWNLOADING ANY MEDIA FROM WORLD WIDE WEB
 
 import requests
-from colorama import *
+
+from colorama import init , Fore,Style
+
+init()
+
 from PIL import Image
 
 def get_users_post(insta_username) :

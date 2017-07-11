@@ -10,8 +10,7 @@ from colorama import *
 
 init()
 
-
-#method for getting post id of a particular post
+# method for getting post id of a particular post
 
 def get_post_id(insta_username):
 
@@ -37,6 +36,8 @@ def get_post_id(insta_username):
         else:
             print 'There is no recent post of the user!'
             exit()
+            print (Style.RESET_ALL)
     else:
         print 'Status code other than 200 received!'
+        print (Style.RESET_ALL)
         exit()

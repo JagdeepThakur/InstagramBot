@@ -4,19 +4,24 @@ from token import BASE_URL,APP_ACCESS_TOKEN
 
 from Get_Post_Id import get_post_id
 
-from colorama import *
+from colorama import init,Fore
 
-def get_like_list(insta_username) :
+#this method is used to get comment lists of all the users who have commented to a particular post
 
-    media_id=get_post_id(insta_username)   #getting media id
-    request_url=BASE_URL+"media/%s/likes?access_token=%s"%(media_id,APP_ACCESS_TOKEN)
-    print "Get request URL:%s"%(request_url)
-    user_media=requests.get(request_url).json()
-    print user_media
+def get_comment_list(insta_username) :
 
-    if user_media['meta']['code']==200 :
-        print Fore.BLACK+Style.BRIGHT+"Media with media id {} is liked by following users:".format(media_id)
-        for (index,user_likes) in enumerate(user_media['data']) :
-            print "{}. {} ({})  -{}".format(index+1,user_likes['full_name'],user_likes['id'],user_likes['username'])
+    media_id=get_post_id(insta_username)
+    request_url=BASE_URL+"media/%s/comments/?access_token=%s"%(media_id,APP_ACCESS_TOKEN)
+    print "Get Requested URL:%s"%(request_url)
+    comment_info=requests.get(request_url).json()
+
+    if comment_info['meta']['code']==200 :
+        if len(comment_info['data']) :
+            for x in range(0,len(comment_info['data'])) :
+                comment_id=comment_info['data'][x]['id']
+                comment_text=comment_info['data'][x]['text']
+                print Fore.BLUE+Style.BRIGHT+"Comments are %s"%(comment_text)
+        else:
+            print "there is no comment regarding this post"
     else :
-        print Fore.RED+Style.BRIGHT+"STATUS CODE OTHER THAN 200 RECIEVED"
+        print "status code other than 200 found"
