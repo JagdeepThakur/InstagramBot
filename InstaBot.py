@@ -33,21 +33,40 @@ show_menu = True
 
 while show_menu:
 
-    print "Before Starting This Application Get Certain Help From Us..\n "
-    print "\nFor Testing Purpose royal_khann,vishavgupta97 Are Some Valid insta_username"
-    print "\n"
+    speak.Speak("Welcome to instagram bot created by Sir Jagdeep Thakur ")
 
-    print Fore.BLUE+Style.BRIGHT+"Here are your menu options:"
+    print Fore.BLUE+Style.BRIGHT+"\nHere are your menu options:"
+    speak.Speak("Here are your menu options")
+
     print "1.Get your own details\n"
+    speak.Speak("Get your own details")
+
     print "2.Get details of a user by username\n"
+    speak.Speak("Get details of a user by username")
+
     print "3.Get your own recent post\n"
+    speak.Speak("Get your own recent post")
+
     print "4.Get the recent post of a user by username\n"
+    speak.Speak("Get the recent post of a user by username")
+
     print "5.Get a list of people who have liked the recent post of a user\n"
+    speak.Speak("Get a list of people who have liked the recent post of a user")
+
     print "6.Like the recent post of a user\n"
+    speak.Speak("Like the recent post of a user")
+
     print "7.Get a list of comments on the recent post of a user\n"
+    speak.Speak("Get a list of comments on the recent post of a user")
+
     print "8.Make a comment on the recent post of a user\n"
+    speak.Speak("Make a comment on the recent post of a user")
+
     print "9.Delete negative comments from the recent post of a user\n"
+    speak.Speak("Delete negative comments from the recent post of a user")
+
     print "10.Exit"
+    speak.Speak("Exit The application")
     print (Style.RESET_ALL)
 
     # Asking value from the user until they give the valid response
@@ -55,6 +74,7 @@ while show_menu:
     while (True):
 
             try:
+                speak.Speak("Enter your choice")
                 menu_choice = int(raw_input("Now Kindly Enter Your Choice\n"))
 
             except ValueError:
