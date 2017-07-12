@@ -35,7 +35,7 @@ show_menu = True
 
 while show_menu:
 
-    speak.Speak("Welcome to instagram bot created by Sir Jagdeep Thakur ")
+    speak.Speak("Welcome to Instagram bot created by Sir Jagdeep Thakur ")
 
     print (Fore.BLUE+"Here are your menu options: \n")
     speak.Speak("Here are your menu options")
