@@ -18,6 +18,8 @@ from Get_Like_List import get_like_list
 
 from SelfInfo import self_info
 
+from DisaterManagement import Location
+
 from colorama import init,Fore,Style
 
 init()
@@ -65,7 +67,10 @@ while show_menu:
     print "9.Delete negative comments from the recent post of a user\n"
     speak.Speak("Delete negative comments from the recent post of a user")
 
-    print "10.Exit"
+    print "10.Check if there is a natural calamity at the default location\n"
+    speak.Speak("Check if there is a natural calamity at the default location")
+
+    print "11.Exit"
     speak.Speak("Exit The application")
     print (Style.RESET_ALL)
 
@@ -159,9 +164,10 @@ while show_menu:
             print (Style.RESET_ALL)
             print("\n")
 
+    elif menu_choice == 10:
+        Location()
 
-
-    elif menu_choice==10 :
+    elif menu_choice==11 :
             exit()
 
 
