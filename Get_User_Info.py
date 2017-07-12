@@ -9,13 +9,13 @@ from colorama import init,Fore,Style
 init()
 
 
-# Mehod FoR Getting information of a particular user
+# Function FoR Getting information of a particular user
 
 def get_user_info(insta_username) :
 
     user_id=get_user_id(insta_username)
 
-    # If Nothing is recieved from server
+    # If Nothing is received from server
 
     if user_id == None:
         print Fore.RED+"User does not exist!!"

@@ -6,9 +6,9 @@ from common import BASE_URL,APP_ACCESS_TOKEN
 
 from colorama import *
 
-#insta_username="jagdeep_thakur7"
+# insta_username="jagdeep_thakur7"
 
-#this method is used for liking a particular post
+# this Function is used for liking a particular post
 
 
 def like_a_post(insta_username) :

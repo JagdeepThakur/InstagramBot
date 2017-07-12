@@ -10,7 +10,7 @@ from colorama import *
 
 init()
 
-# method for getting post id of a particular post
+# Function for getting post id of a particular post
 
 def get_post_id(insta_username):
 
@@ -18,7 +18,7 @@ def get_post_id(insta_username):
 
     user_id = get_user_id(insta_username)
 
-    #If User Doesn't exists than server return none
+    # If User Doesn't exists than server return none
 
     if user_id == None:
         print 'User does not exist!'

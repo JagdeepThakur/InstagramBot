@@ -8,7 +8,7 @@ from colorama import init,Fore
 
 init()
 
-#this method is used to get comment lists of all the users who have commented to a particular post
+# This function is used to get  comment list of all the users who have commented to a particular post
 
 def get_comment_list(insta_username) :
 

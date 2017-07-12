@@ -17,17 +17,17 @@ from Get_Post_Id import get_post_id
 from colorama import *
 
 
-positive_comments=[]    #list to store list of positive comments
+positive_comments=[]    # list to store list of positive comments
 
-negative_comments=[]    #list to store number of negative comments
-
-
-total_comments=[]       #list to store total number of comments
-
-#this method is used for analysing The comment whether it is positive comment or negative comment
+negative_comments=[]    # list to store number of negative comments
 
 
-#Also deleting the comments from the user's posts if it is negative
+total_comments=[]       # list to store total number of comments
+
+# this Function is used for analysing The comment whether it is positive comment or negative comment
+
+
+# Also deleting the comments from the user's posts if it is negative
 
 def delete_negative_comment(insta_username):
 
@@ -41,6 +41,7 @@ def delete_negative_comment(insta_username):
         if len(comment_info['data']):
 
             #Here's a naive implementation of how to delete the negative comments :)
+
             for x in range(0, len(comment_info['data'])):
                 comment_id = comment_info['data'][x]['id']
                 comment_text = comment_info['data'][x]['text']

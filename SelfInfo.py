@@ -4,7 +4,7 @@ from common import BASE_URL,APP_ACCESS_TOKEN
 
 from colorama import  *
 
-# Mehod For Getting your own Information
+# Function For Getting your own Information
 
 def self_info() :
 
@@ -12,7 +12,7 @@ def self_info() :
 
     print "Get Request URL:%s"%(requests_url)
 
-    # Get mehod Is Used For Getting Own Information
+    # Get function Is Used For Getting Own Information
 
     user_info=requests.get(requests_url).json()
 

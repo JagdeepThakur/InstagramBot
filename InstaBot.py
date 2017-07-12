@@ -18,7 +18,7 @@ from Get_Like_List import get_like_list
 
 from SelfInfo import self_info
 
-from colorama import *
+from colorama import init,Fore,Style
 
 init()
 
@@ -35,7 +35,7 @@ while show_menu:
 
     speak.Speak("Welcome to instagram bot created by Sir Jagdeep Thakur ")
 
-    print Fore.BLUE+Style.BRIGHT+"\nHere are your menu options:"
+    print (Fore.BLUE+"Here are your menu options: \n")
     speak.Speak("Here are your menu options")
 
     print "1.Get your own details\n"

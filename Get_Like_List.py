@@ -6,6 +6,8 @@ from Get_Post_Id import get_post_id
 
 from colorama import *
 
+# This function is used to get list of people who have liked the post
+
 def get_like_list(insta_username) :
 
     media_id=get_post_id(insta_username)
