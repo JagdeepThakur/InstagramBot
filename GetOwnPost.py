@@ -29,7 +29,7 @@ def get_own_post() :
 
         if len(own_media['data']) :
 
-            image_name = own_media['data'][0]['id'] + '.jpeg'
+            image_name = own_media['data'][0]['id'] + '.jpg'
 
             image_url = own_media['data'][0]['images']['standard_resolution']['url']
 

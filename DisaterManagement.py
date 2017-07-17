@@ -12,14 +12,14 @@ def Location():
 
     # Getting location info according to geographical coordinates
 
-    request_url = (BASE_URL + 'locations/search?lat=48.858844&lng=2.294351&access_token=%s') % (user_id, APP_ACCESS_TOKEN)
+    request_url = (BASE_URL + 'locations/search?lat=48.858844&lng=2.294351&access_token=%s') % ( APP_ACCESS_TOKEN)
     print 'GET request url : %s' % (request_url)
     location_info = requests.get(request_url).json()
 
     # Getting recent media at a particular location
 
-    request_url = (BASE_URL + 'locations/'+location_info['data']['id']+'/media/recent?access_token=%s') % (user_id, APP_ACCESS_TOKEN)
-    print 'GET request url : %s' % (request_url)
+    request_url = (BASE_URL + 'locations/'+'%d'+'/media/recent?access_token=%s') % (location_info['data']['id'], APP_ACCESS_TOKEN)
+    print 'GET request url : %s' % ( request_url)
     caption_info = requests.get(request_url).json()
 
     if caption_info['meta']['code'] == 200:
