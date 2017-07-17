@@ -89,7 +89,7 @@ while show_menu:
             if (menu_choice) <0:
                 print "\nValue cannot be negative..!!"
                 continue
-            elif menu_choice >0 and menu_choice <=10:
+            elif menu_choice >0 and menu_choice <=11:
                 break
             else:
                 print "\nEnter a valid number...!!"
