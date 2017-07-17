@@ -8,7 +8,7 @@ import requests
 
 import urllib
 
-#from PIL import Image
+from PIL import Image
 
 # PIL Is PYTHON IMAGE PROCESSING LIBRARY
 
@@ -37,11 +37,11 @@ def get_own_post() :
 
             print Fore.BLUE+Style.BRIGHT+"Your image has been downloaded!"
 
-      #      image = "C:\Users\thaku\PycharmProjects\InstaBot\\" + image_name
+            image = "C:\Users\thaku\PycharmProjects\InstaBot\\" + image_name
 
- #           img = Image.open(image)
+           img = Image.open(image)
 
-  #          img.show()
+            img.show()
 
             return own_media['data'][0]['id']
 
