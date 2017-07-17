@@ -123,7 +123,7 @@ while show_menu:
             insta_username = raw_input(Fore.RED+Style.BRIGHT+"Enter Username.........\n")
             print(Fore.GREEN+Style.BRIGHT+"Wait Downloading user post......")
             get_users_post(insta_username)
-            print "Your image has been downloaded!....to.....C:\Users\DELL\PycharmProjects\instabot\\"
+            print "Your image has been downloaded!....to.....C:\Users\thaku\PycharmProjects\instabot\\"
             print (Style.RESET_ALL)
             print("\n")
 

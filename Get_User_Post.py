@@ -35,9 +35,9 @@ def get_users_post(insta_username) :
             image_url = user_media['data'][0]['images']['standard_resolution']['url']
             urllib.urlretrieve(image_url, image_name)
             print Fore.BLUE+Style.BRIGHT+"Users Post Is Successfully Downloaded"
-            image = "C:\Users\thaku\PycharmProjects\InstaBot\\"+image_name
-            img = Image.open(image)
-            img.show()
+           # image = "C:\Users\thaku\PycharmProjects\InstaBot\\"+image_name
+           # img = Image.open(image)
+           # img.show()
             return user_media['data'][0]['id']
 
         else :
@@ -45,4 +45,4 @@ def get_users_post(insta_username) :
 
     else :
         print "Status Code Other Than 200 Is Recieved"
-    return None
+        return None
