@@ -114,7 +114,7 @@ while show_menu:
     elif menu_choice == 3:
             print (Fore.GREEN+Style.BRIGHT+"WAit Getting ur post.......\n")
             get_own_post()
-            print "Your image has been downloaded!....to.....C:\Users\GUPTA\PycharmProjects\instabot\\"
+            print "Your image has been downloaded!....to.....C:\Users\thaku\PycharmProjects\instabot\\"
             print (Style.RESET_ALL)
             print("\n")
 

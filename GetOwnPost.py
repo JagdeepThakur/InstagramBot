@@ -39,7 +39,7 @@ def get_own_post() :
 
             image = "C:\Users\thaku\PycharmProjects\InstaBot\\" + image_name
 
-           img = Image.open(image)
+            img = Image.open(image)
 
             img.show()
 
@@ -52,6 +52,6 @@ def get_own_post() :
 
             print(Style.RESET_ALL)
 
-    else :
+    else:
         print Fore.RED+Style.BRIGHT+"STATUS CODE OTHER THAN 200 IS FOUND!"
-    return None
+        return None
