@@ -8,10 +8,6 @@ import requests
 
 import urllib
 
-from PIL import Image
-
-# PIL Is PYTHON IMAGE PROCESSING LIBRARY
-
 from colorama import *
 
 init()
@@ -36,12 +32,6 @@ def get_own_post() :
             urllib.urlretrieve(image_url, image_name)
 
             print Fore.BLUE+Style.BRIGHT+"Your image has been downloaded!"
-
-            image = "C:\Users\thaku\PycharmProjects\InstaBot\\" + image_name
-
-            img = Image.open(image)
-
-            img.show()
 
             return own_media['data'][0]['id']
 

@@ -1,57 +1,45 @@
-# This function will check if there is a natural calamity at a particular geographical coordinates
-
 import requests
 
 from common import BASE_URL,APP_ACCESS_TOKEN
 
+from Get_User_Id import get_user_id
+
+service = ['natural' ,'earthquake' ,'flood' ,'weather' ,'trees' ,'thunderstorm' ,'hurricane' ,'drought' ,'environment' ,'birds' ,'landslide'
+           ,'tornado' ,'tsunami' ,'blizzard']
 
 #insta_username="jagdeep_thakur7"
 
-def Location():
+def Location(insta_username):
 
+    user_id = get_user_id(insta_username)
+    request_url = (BASE_URL + "users/%s/media/recent/?access_token=%s" % (user_id, APP_ACCESS_TOKEN))
+    print("Get request url: " + request_url)
+    user_info = requests.get(request_url).json()
+    user_info
+    if user_info['meta']['code'] == 200:
+        if len(user_info['data']):
+            for post in range(0, len(user_info['data'])):
+                pic_no = post + 1
+                for temp in service:
+                    if user_info['data'][post]['caption'] == None:
+                        print("Sorry there is no hashtag inside the image...")
 
-    # Getting location info according to geographical coordinates
+                    elif temp in user_info['data'][post]['caption']['text']:
+                        print(user_info['data'][post]['caption']['text'])
+                        pic_id = user_info['data'][post]['id']
+                        comment_text = raw_input("Your comment: ")
+                        payload = {"access_token": APP_ACCESS_TOKEN, "text": comment_text}
+                        request_url = (BASE_URL + 'media/%s/comments') % (pic_id)
+                        print 'POST request url : %s' % (request_url)
 
-    request_url = (BASE_URL + 'locations/search?lat=48.858844&lng=2.294351&access_token=%s') % ( APP_ACCESS_TOKEN)
-    print 'GET request url : %s' % (request_url)
-    location_info = requests.get(request_url).json()
+                        make_comment = requests.post(request_url, payload).json()
 
-    # Getting recent media at a particular location
-
-    request_url = (BASE_URL + 'locations/'+'%d'+'/media/recent?access_token=%s') % (location_info['data']['id'], APP_ACCESS_TOKEN)
-    print 'GET request url : %s' % ( request_url)
-    caption_info = requests.get(request_url).json()
-
-    if caption_info['meta']['code'] == 200:
-
-        if len(caption_info['data']):
-
-            for y in range(0, len(caption_info['data'])):
-
-                caption_text = caption_info['data'][y]['caption']['text']
-                caption = caption_text.split(" ")
-                if 'earthquake' in caption or 'EARTHQUAKE' in caption:
-
-                    print 'Read Caption: %s' % (caption)
-                    print "Eathquake at %s" % (location_info['data']['name'])
-
-                elif 'FLOODS' in caption or 'floods' in caption:
-
-                        print 'Read Caption: %s' % (caption)
-                        print 'Floods in %s' % (location_info['data']['name'])
-
-                elif 'tornado' in caption or 'TORNADO' in caption:
-
-                    print 'Read Caption: %s' % (caption)
-                    print "Tornado in %s" % (location_info['data']['name'])
-
-                elif 'landslides' in caption or 'LANDSLIDES' in caption:
-
-                    print 'Read Caption: %s' % (caption)
-                    print 'Landslides at %s' % (location_info['data']['name'])
-                else:
-                    print 'There are no natural calamity at given geographical coordinates!'
-
-        else:
-
-            print 'Status code other than 200 received!'
+                        if make_comment['meta']['code'] == 200:
+                            print "Successfully added a new comment!"
+                        else:
+                            print "Unable to add comment. Try again!"
+                    else:
+                        print("Sorry hashtag didn't match.Go further...")
+            print("End of images...")
+    else:
+        print"Request failed."

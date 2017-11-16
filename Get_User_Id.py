@@ -6,7 +6,7 @@ import sys
 
 from colorama import *
 
-#method for getting user id of the user and method takes instagram username as an input
+# method for getting user id of the user and method takes instagram username as an input
 
 def get_user_id(insta_username) :
 

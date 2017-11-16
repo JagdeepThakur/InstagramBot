@@ -123,7 +123,6 @@ while show_menu:
             insta_username = raw_input(Fore.RED+Style.BRIGHT+"Enter Username.........\n")
             print(Fore.GREEN+Style.BRIGHT+"Wait Downloading user post......")
             get_users_post(insta_username)
-            print "Your image has been downloaded!....to.....C:\Users\thaku\PycharmProjects\instabot\\"
             print (Style.RESET_ALL)
             print("\n")
 
@@ -159,15 +158,17 @@ while show_menu:
 
     elif menu_choice == 9:
             insta_username = raw_input(Fore.RED + Style.BRIGHT + "Enter Username.........\n")
-            print("\n" + Fore.GREEN + Style.BRIGHT + "Progress Is In Deletion.\n")
+            print("\n" + Fore.GREEN + Style.BRIGHT + "Deleting negative comments if any.\n")
             delete_negative_comment(insta_username)
             print (Style.RESET_ALL)
             print("\n")
 
     elif menu_choice == 10:
-        Location()
+        insta_username = raw_input(Fore.RED + Style.BRIGHT + "Enter Username.........\n")
+        Location(insta_username)
 
     elif menu_choice==11 :
+            speak.Speak("Exiting Application")
             exit()
 
 
