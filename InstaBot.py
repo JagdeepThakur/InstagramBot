@@ -35,7 +35,7 @@ show_menu = True
 
 while show_menu:
 
-    speak.Speak("Welcome to Instagram bot created by Sir Jagdeep Thakur ")
+    speak.Speak("Welcome to Instagram bot")
 
     print (Fore.BLUE+"Here are your menu options: \n")
     speak.Speak("Here are your menu options")
@@ -67,7 +67,7 @@ while show_menu:
     print "9.Delete negative comments from the recent post of a user\n"
     speak.Speak("Delete negative comments from the recent post of a user")
 
-    print "10.Check if there is a natural calamity at the default location\n"
+    print "10.Check if there is a natural calamity\n"
     speak.Speak("Check if there is a natural calamity at the default location")
 
     print "11.Exit"
